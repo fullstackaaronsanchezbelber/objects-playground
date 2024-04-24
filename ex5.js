@@ -33,16 +33,23 @@ function buscarPez(banco_peces, pezBuscado) {
   let pezEncontrado = false;
   let indicePez = 0;
 
-  while (!pezEncontrado && indicePez <= banco_peces.length) {}
+  while (!pezEncontrado && indicePez < banco_peces.length) {
+    // Comprobar si el nombre del pez actual coincide con el pez buscado
+    if (banco_peces[indicePez].nombre === pezBuscado) {
+      pezEncontrado = true; // Actualizar pezEncontrado a true si el pez buscado se encuentra
+    } else {
+      indicePez++; // Incrementar el índice para pasar al siguiente pez en el array
+    }
+  }
 
   return pezEncontrado;
 }
 
 // Esta llamada debería devolver 'true'
-// console.log(buscarPez(banco_peces, 'Nemo'));
+console.log(buscarPez(banco_peces, 'Nemo'));
 
 // Esta llamada debería devolver 'true'
-// console.log(buscarPez(banco_peces, 'Sipho'));
+console.log(buscarPez(banco_peces, 'Sipho'));
 
 // Esta llamada debería devolver 'false'
-// console.log(buscarPez(banco_peces, 'Tenacitas'));
+console.log(buscarPez(banco_peces, 'Tenacitas'));
